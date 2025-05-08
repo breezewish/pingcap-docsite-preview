@@ -123,7 +123,6 @@ perform_sync_task() {
       rsync -av --files-from=- "$SRC_DIR" "$DEST_DIR"
 
     # Remove copyable strings.
-    (cd "$DEST_DIR" && remove_copyable)
 
     if [[ "$IS_CLOUD" && -f "$DEST_DIR/TOC-tidb-cloud.md" ]]; then
       process_cloud_toc "$DEST_DIR"
